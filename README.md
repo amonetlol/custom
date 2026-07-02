@@ -24,6 +24,10 @@ Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox**, **theme-glass
 
 ![theme-orange](previews/orange.jpg)
 
+### theme-sonokai
+
+![theme-sonokai](previews/sonokai.jpg)
+
 ## Estrutura
 
 ```
