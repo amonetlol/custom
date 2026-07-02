@@ -1,0 +1,77 @@
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+@import "shared/elements.rasi"
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 720px;
+    background-color: @background;
+    border: 1px solid;
+    border-color: @accent;
+    border-radius: 20px;
+}
+
+mainbox {
+    spacing: 14px;
+    margin: 24px;
+    background-color: transparent;
+    children: [ message, listview ];
+}
+
+inputbar {
+    enabled: false;
+}
+
+message {
+    margin: 0px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+listview {
+    columns: 5;
+    lines: 1;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 12px;
+    background-color: transparent;
+}
+
+element {
+    padding: 20px 8px;
+    border-radius: 16px;
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background;
+}
+
+element-text {
+    font: "0xProto Nerd Font Propo 14";
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}

@@ -1,0 +1,15 @@
+/* theme-bamboo — paleta Bamboo vulgaris */
+
+@define-color background     #252623;
+@define-color background-alt #2f312c;
+@define-color foreground     #f1e9d2;
+@define-color foreground-dim #838781;
+@define-color accent         #dbb651;
+@define-color accent-soft    #8fb573;
+@define-color shadow         #1c1e1b;
+@define-color warning        #ff9966;
+@define-color critical       #e75a7c;
+
+@define-color green          #8fb573;
+@define-color blue           #57a5e5;
+@define-color cyan           #70c2be;

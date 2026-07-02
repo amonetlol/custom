@@ -1,0 +1,69 @@
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+@import "shared/elements.rasi"
+@import "shared/inputbar.rasi"
+
+configuration {
+    modi: "drun";
+    show-icons: true;
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 720px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: @accent;
+    background-color: @background;
+}
+
+mainbox {
+    spacing: 12px;
+    margin: 28px;
+    background-color: transparent;
+    children: [ inputbar, listview ];
+}
+
+entry {
+    placeholder: "Search...";
+}
+
+listview {
+    columns: 1;
+    lines: 8;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+    spacing: 6px;
+    background-color: transparent;
+}
+
+element {
+    spacing: 12px;
+    padding: 8px 12px;
+    border-radius: 14px;
+    orientation: horizontal;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @background;
+}
+
+element-icon {
+    padding: 8px;
+    border-radius: 100%;
+    background-color: transparent;
+    size: 28px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}

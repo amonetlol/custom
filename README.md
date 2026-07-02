@@ -1,6 +1,6 @@
 # custom — Hyprland theme & tooling
 
-Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox**, **theme-glass**, **theme-orange**, **theme-sonokai** e **theme-edge** para Waybar, Rofi, Foot e Hyprland.
+Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox**, **theme-glass**, **theme-orange**, **theme-sonokai**, **theme-edge** e **theme-bamboo** para Waybar, Rofi, Foot e Hyprland.
 
 ## Preview
 
@@ -43,6 +43,7 @@ custom/
 ├── theme-orange/
 ├── theme-sonokai/
 ├── theme-edge/
+├── theme-bamboo/
 │   ├── theme.conf
 │   ├── waybar/
 │   ├── rofi/

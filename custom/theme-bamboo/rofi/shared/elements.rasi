@@ -1,0 +1,34 @@
+/* Lista padrão theme-bamboo */
+
+element {
+    padding: 10px 14px;
+    border-radius: 10px;
+    background-color: @background-alt;
+    text-color: @foreground;
+    cursor: pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+element selected.normal {
+    background-color: @accent;
+    text-color: @background;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+}
