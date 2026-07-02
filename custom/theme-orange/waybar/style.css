@@ -1,0 +1,173 @@
+@import "colors.css";
+
+@define-color bg @background;
+@define-color fg @foreground;
+@define-color red @accent;
+
+* {
+  font-family: "0xProto Nerd Font Propo";
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+#waybar > box {
+  margin: 4px 8px;
+  padding: 0;
+  min-height: 32px;
+  border-radius: 99px;
+  background-color: @bg;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  border: 1px solid alpha(@fg, 0.1);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0 4px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces {
+  background-color: alpha(@fg, 0.05);
+  border-radius: 12px;
+  padding: 0;
+  margin: 5px;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 0 2px;
+  min-height: 20px;
+  min-width: 20px;
+  color: @fg;
+  opacity: 0.6;
+  border: none;
+  border-radius: 10px;
+  transition: 0.15s ease-in-out;
+}
+
+#workspaces button.active {
+  opacity: 1;
+  color: @bg;
+  background: @accent;
+  border-radius: 99px;
+}
+
+#workspaces button.empty {
+  color: alpha(@fg, 0.25);
+  opacity: 1;
+}
+
+#workspaces button.active.empty {
+  color: @bg;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  opacity: 1;
+  color: @accent;
+  background: alpha(@accent, 0.12);
+  border-radius: 99px;
+}
+
+#custom-arch {
+  color: @accent;
+  font-size: 14px;
+  padding: 0 6px;
+  margin: 0 4px;
+}
+
+#custom-power {
+  color: @accent;
+  font-size: 14px;
+  padding: 0 6px;
+  margin: 0 4px;
+}
+
+#clock {
+  color: @accent;
+  padding: 0 8px;
+  margin: 0 2px;
+}
+
+#custom-weather,
+#memory,
+#cpu,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#tray,
+#idle_inhibitor {
+  min-width: 12px;
+  color: @fg;
+  padding: 0 4px;
+  margin: 0 2px;
+}
+
+#idle_inhibitor.deactivated {
+  color: alpha(@fg, 0.4);
+}
+
+#idle_inhibitor.activated {
+  color: @accent;
+}
+
+#tray {
+  margin-top: 1px;
+}
+
+#memory.warning,
+#cpu.warning,
+#network.disconnected {
+  color: @warning;
+}
+
+#memory.critical,
+#cpu.critical {
+  color: @critical;
+}
+
+#custom-arch:hover,
+#custom-power:hover,
+#memory:hover,
+#clock:hover,
+#cpu:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-weather:hover {
+  color: @accent;
+  transition: 0.2s ease-in-out;
+}
+
+tooltip {
+  padding: 6px 8px;
+  background: @bg;
+  font-size: 11px;
+  border: 1px solid alpha(@fg, 0.2);
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @fg;
+  font-weight: normal;
+}
