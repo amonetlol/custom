@@ -85,7 +85,7 @@
 
   "cpu": {
     "interval": 5,
-    "format": "󰻠 {usage:02}%",
+    "format": "󰻠 {usage}%",
     "on-click": "foot -e btop",
     "states": {
       "warning": 50,

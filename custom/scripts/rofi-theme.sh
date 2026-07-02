@@ -19,6 +19,25 @@ get_active_theme() {
     | sed -E 's/^\$THEME\s*=\s*//;s/[[:space:]]*$//'
 }
 
+theme_label() {
+  local id="$1"
+  local name="${id#theme-}"
+  printf '%s' "${name^}"
+}
+
+theme_id_from_label() {
+  local label="$1"
+  local theme
+  while IFS= read -r theme; do
+    [[ -z "$theme" ]] && continue
+    if [[ "$(theme_label "$theme")" == "$label" ]]; then
+      printf '%s' "$theme"
+      return 0
+    fi
+  done < <(list_themes)
+  return 1
+}
+
 link_shared() {
   local theme="$1"
   local shared="$CUSTOM_DIR/$theme/rofi/shared"
@@ -67,7 +86,7 @@ apply_theme() {
   hyprctl reload
   "$CUSTOM_DIR/$selected/rofi/hub.sh" --waybar
   reload_foot
-  notify-send -u low "Tema" "Ativo: $selected" 2>/dev/null || true
+  notify-send -u low "Tema" "Ativo: $(theme_label "$selected")" 2>/dev/null || true
 }
 
 [[ -f "$CURRENT_FILE" ]] || {
@@ -82,10 +101,11 @@ link_foot "$active"
 menu=""
 while IFS= read -r theme; do
   [[ -z "$theme" ]] && continue
+  label="$(theme_label "$theme")"
   if [[ "$theme" == "$active" ]]; then
-    menu+="● ${theme}"$'\n'
+    menu+="● ${label}"$'\n'
   else
-    menu+="${theme}"$'\n'
+    menu+="${label}"$'\n'
   fi
 done < <(list_themes)
 
@@ -95,6 +115,9 @@ chosen="$(printf '%s' "$menu" | rofi -dmenu -i -p "Tema" -theme "$THEME_RASI")"
 chosen="${chosen#● }"
 chosen="$(printf '%s' "$chosen" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
 [[ -z "$chosen" ]] && exit 0
-[[ "$chosen" == "$active" ]] && exit 0
 
-apply_theme "$chosen"
+selected="$(theme_id_from_label "$chosen")"
+[[ -z "$selected" ]] && exit 0
+[[ "$selected" == "$active" ]] && exit 0
+
+apply_theme "$selected"
