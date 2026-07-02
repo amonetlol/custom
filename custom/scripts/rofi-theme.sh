@@ -6,6 +6,7 @@ CUSTOM_DIR="${CUSTOM_DIR:-$HOME/.config/custom}"
 CURRENT_FILE="$CUSTOM_DIR/current"
 THEME_RASI="$SCRIPTS_DIR/rofi-theme.rasi"
 SHARED_LINK="$SCRIPTS_DIR/rofi-theme-shared"
+FOOT_LINK="$CUSTOM_DIR/foot"
 
 list_themes() {
   grep -E '^\s*#?\s*\$THEME\s*=' "$CURRENT_FILE" \
@@ -28,6 +29,23 @@ link_shared() {
   ln -sfn "$shared" "$SHARED_LINK"
 }
 
+link_foot() {
+  local theme="$1"
+  local foot_dir="$CUSTOM_DIR/$theme/foot"
+  [[ -d "$foot_dir" ]] || {
+    notify-send -u critical "Tema" "Pasta não encontrada: $foot_dir" 2>/dev/null || true
+    exit 1
+  }
+  ln -sfn "$foot_dir" "$FOOT_LINK"
+}
+
+reload_foot() {
+  if command -v footclient >/dev/null 2>&1; then
+    footclient reload 2>/dev/null || true
+  fi
+  pkill -USR1 -x foot 2>/dev/null || true
+}
+
 apply_theme() {
   local selected="$1"
   local themes=()
@@ -45,8 +63,10 @@ apply_theme() {
   } >"$CURRENT_FILE"
 
   link_shared "$selected"
+  link_foot "$selected"
   hyprctl reload
   "$CUSTOM_DIR/$selected/rofi/hub.sh" --waybar
+  reload_foot
   notify-send -u low "Tema" "Ativo: $selected" 2>/dev/null || true
 }
 
@@ -57,6 +77,7 @@ apply_theme() {
 
 active="$(get_active_theme)"
 link_shared "$active"
+link_foot "$active"
 
 menu=""
 while IFS= read -r theme; do
