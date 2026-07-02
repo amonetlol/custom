@@ -40,14 +40,14 @@ element {
 }
 
 element selected.normal {
-    background-color: @selected;
+    background-color: @accent;
     text-color: @background;
 }
 
 element-icon {
     size: 20px;
     margin: 0 8px 0 0;
-    background-color: @active;
+    background-color: transparent;
     border-radius: 6px;
     padding: 4px;
 }

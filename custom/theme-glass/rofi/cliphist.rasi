@@ -46,6 +46,6 @@ element {
 }
 
 element selected.normal {
-    background-color: @selected;
+    background-color: @accent;
     text-color: @background;
 }

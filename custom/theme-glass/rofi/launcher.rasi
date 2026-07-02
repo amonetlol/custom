@@ -52,14 +52,14 @@ element {
 }
 
 element selected.normal {
-    background-color: @selected;
+    background-color: @accent;
     text-color: @background;
 }
 
 element-icon {
     padding: 8px;
     border-radius: 100%;
-    background-color: @active;
+    background-color: transparent;
     size: 28px;
 }
 

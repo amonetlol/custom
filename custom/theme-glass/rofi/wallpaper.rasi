@@ -51,13 +51,13 @@ listview {
 element {
     padding: 4px;
     border-radius: 10px;
-    background-color: @background-alt;
+    background-color: transparent;
 }
 
 element selected.normal {
     border: 2px solid;
-    border-color: @selected;
-    background-color: @background-alt;
+    border-color: @accent;
+    background-color: alpha(@accent, 0.15);
 }
 
 element-icon {
