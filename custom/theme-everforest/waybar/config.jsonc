@@ -1,0 +1,131 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "spacing": 0,
+  "height": 26,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "idle_inhibitor",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock",
+    "custom/weather"
+  ],
+
+  "modules-right": [
+    "memory",
+    "cpu",
+    "network",
+    // "bluetooth",
+    "pulseaudio",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "cursor": true,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 1
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 45
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip-format-activated": "Stay Awake: ON",
+    "tooltip-format-deactivated": "Stay Awake: OFF",
+    "format-icons": {
+      "activated": "󱎴",
+      "deactivated": "󰷛"
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y — %H:%M}",
+    "interval": 30
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 300,
+    "exec": "wttrbar --nerd --lang pt --location Ubatuba+SP",
+    "return-type": "json",
+    "on-click": "xdg-open https://wttr.in/Ubatuba+SP"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {used:0.1f}GB",
+    "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB ({percentage}%)",
+    "on-click": "foot -e btop",
+    "states": {
+      "warning": 50,
+      "critical": 80
+    }
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󰻠 {usage:02}%",
+    "on-click": "foot -e btop",
+    "states": {
+      "warning": 50,
+      "critical": 80
+    }
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌗",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Desconectado",
+    "interval": 3,
+    "on-click": "~/.config/custom/theme-everforest/rofi/hub.sh --applet"
+  },
+
+  // "bluetooth": {
+  //   "format": "󰂯",
+  //   "format-off": "󰂲",
+  //   "format-disabled": "󰂲",
+  //   "format-connected": "󰂯",
+  //   "format-no-controller": "",
+  //   "tooltip-format": "Dispositivos: {num_connections}",
+  //   "on-click": "blueman-manager"
+  // },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip-format": "Volume: {volume}%"
+  },
+
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip-format": "Power menu",
+    "on-click": "~/.config/custom/theme-everforest/rofi/hub.sh --power"
+  }
+}

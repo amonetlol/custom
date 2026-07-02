@@ -7,7 +7,7 @@ DEST="${XDG_CONFIG_HOME:-$HOME/.config}/custom"
 echo "→ Instalando em $DEST"
 mkdir -p "$DEST"
 cp -a "$ROOT/custom/." "$DEST/"
-cp "$ROOT/binds.conf" "$ROOT/current_theme.conf" "$DEST/"
+cp "$ROOT/binds.conf" "$ROOT/current_theme.conf" "$ROOT/current" "$DEST/"
 
 find "$DEST" -type f -name '*.sh' -exec chmod +x {} \;
 

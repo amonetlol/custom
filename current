@@ -1,0 +1,3 @@
+# Tema ativo — descomente apenas um $THEME
+$THEME = theme-everforest
+# $THEME = theme-prateado
