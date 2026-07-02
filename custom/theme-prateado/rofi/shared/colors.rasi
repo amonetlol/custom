@@ -6,5 +6,5 @@
     accent:         #caccccFF;
     active:         #989890FF;
     urgent:         #f53c3cFF;
-    selected:       #caccccFF;
+    selected:       #b0b0a8FF;
 }
