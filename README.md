@@ -16,6 +16,10 @@ Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox** e **theme-glas
 
 ![theme-gruvbox](previews/gruvbox.jpg)
 
+### theme-glass
+
+![theme-glass](previews/glass.jpg)
+
 ## Estrutura
 
 ```
