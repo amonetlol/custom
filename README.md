@@ -32,6 +32,10 @@ Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox**, **theme-glass
 
 ![theme-edge](previews/edge.jpg)
 
+### theme-bamboo
+
+![theme-bamboo](previews/bamboo.jpg)
+
 ## Estrutura
 
 ```
