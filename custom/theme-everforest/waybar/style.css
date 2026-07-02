@@ -50,7 +50,7 @@ window#waybar.empty #window {
 #workspaces button.active {
  padding: 0px 12px;
  margin: 0px 0px;
- background: @foreground;
+ background: @accent;
  color: @background;
  opacity: 1;
 }
@@ -62,7 +62,7 @@ window#waybar.empty #window {
 
 #workspaces button.empty.active {
  opacity: 0.75;
- background: @foreground;
+ background: @accent;
  color: @background;
 }
 
@@ -80,14 +80,14 @@ window#waybar.empty #window {
 
 #workspaces button.active:hover,
 #workspaces button:hover {
- background: @foreground;
+ background: @accent;
  color: @background;
  opacity: 1;
  transition: .7s;
 }
 
 #custom-arch {
- background-color: @foreground;
+ background-color: @accent;
  color: @background;
  border: 1px solid @background;
  min-width: 10px;
@@ -98,7 +98,7 @@ window#waybar.empty #window {
 }
 
 #custom-arch:hover {
- background-color: alpha(@foreground, .9);
+ background-color: alpha(@accent, .9);
  color: @background;
  transition: .7s;
 }
@@ -134,7 +134,7 @@ window#waybar.empty #window {
 #idle_inhibitor:hover,
 #custom-power:hover,
 #window:hover {
- background-color: alpha(@foreground, .9);
+ background-color: @accent;
  color: @background;
  transition: .7s;
 }
@@ -184,7 +184,7 @@ window#waybar.empty #window {
 tooltip {
  border-radius: 5px;
  background: @background;
- border: 2px solid alpha(@foreground, .5);
+ border: 2px solid alpha(@accent, .5);
 }
 
 tooltip label {

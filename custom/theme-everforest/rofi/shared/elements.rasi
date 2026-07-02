@@ -15,7 +15,7 @@ element alternate.normal {
 }
 
 element selected.normal {
-    background-color: @foreground;
+    background-color: @accent;
     text-color: @background;
 }
 
