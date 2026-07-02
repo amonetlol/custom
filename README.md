@@ -2,6 +2,10 @@
 
 Paleta monocromática **theme-prateado** para Waybar, Rofi, Foot e Hyprland.
 
+## Preview
+
+![theme-prateado](previews/prateado.jpg)
+
 ## Estrutura
 
 ```
