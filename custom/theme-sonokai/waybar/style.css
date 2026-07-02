@@ -1,0 +1,169 @@
+@import "colors.css";
+
+* {
+  font-family: "0xProto Nerd Font Propo";
+  font-size: 12px;
+  font-weight: 500;
+  border: none;
+  border-radius: 0;
+  min-height: 20px;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+window#waybar > box {
+  border-radius: 14px;
+  border: 1px solid alpha(@foreground, 0.1);
+  margin: 4px 8px;
+  background-color: alpha(@background, 0.75);
+}
+
+.modules-left {
+  background-color: alpha(@foreground, 0.08);
+  margin: 4px 2px 4px 4px;
+  padding: 0 8px;
+  border-radius: 10px 4px 4px 10px;
+}
+
+.modules-center {
+  background-color: alpha(@foreground, 0.08);
+  margin: 4px 2px;
+  padding: 0 10px;
+  border-radius: 4px;
+}
+
+.modules-right {
+  background-color: alpha(@foreground, 0.08);
+  margin: 4px 4px 4px 2px;
+  padding: 0 8px;
+  border-radius: 4px 10px 10px 4px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces {
+  border-radius: 10px;
+  background-color: transparent;
+  margin: 4px 0;
+  padding: 0;
+}
+
+#workspaces button {
+  padding: 0 8px;
+  margin: 0 2px;
+  border-radius: 6px;
+  color: alpha(@foreground, 0.5);
+  background-color: transparent;
+  transition: 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  background-color: alpha(@accent, 0.2);
+  color: @accent;
+}
+
+#workspaces button.empty {
+  color: alpha(@foreground, 0.2);
+}
+
+#workspaces button.empty.active {
+  background-color: alpha(@accent, 0.15);
+  color: alpha(@accent, 0.9);
+}
+
+#workspaces button:hover,
+#workspaces button:hover.empty {
+  background-color: @accent;
+  color: @shadow;
+}
+
+#custom-arch {
+  color: @accent;
+  font-size: 14px;
+  padding: 0 4px;
+  margin: 0 2px;
+}
+
+#custom-power {
+  color: @accent;
+  font-size: 14px;
+  padding: 0 4px;
+  margin: 0 2px;
+}
+
+#clock {
+  color: @accent;
+  padding: 0 6px;
+  margin: 0 2px;
+}
+
+#custom-weather,
+#memory,
+#cpu,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#tray,
+#idle_inhibitor {
+  min-width: 10px;
+  color: @foreground;
+  padding: 0 6px;
+  margin: 0;
+  background-color: transparent;
+}
+
+#idle_inhibitor.activated {
+  color: @accent;
+}
+
+#idle_inhibitor.deactivated {
+  color: alpha(@foreground, 0.45);
+}
+
+#memory.warning,
+#cpu.warning,
+#network.disconnected {
+  color: @warning;
+}
+
+#memory.critical,
+#cpu.critical {
+  color: @critical;
+}
+
+#custom-arch:hover,
+#custom-power:hover,
+#memory:hover,
+#clock:hover,
+#cpu:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-weather:hover {
+  color: @accent;
+  transition: 0.2s ease-in-out;
+}
+
+tooltip {
+  padding: 6px 8px;
+  background: @background-alt;
+  border: 1px solid alpha(@foreground, 0.2);
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @foreground;
+  font-weight: normal;
+  font-size: 11px;
+}

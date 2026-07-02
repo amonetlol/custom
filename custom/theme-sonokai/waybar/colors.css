@@ -1,0 +1,15 @@
+/* theme-sonokai — paleta Sonokai Maia */
+
+@define-color background     #273136;
+@define-color background-alt #313b42;
+@define-color foreground     #e1e2e3;
+@define-color foreground-dim #82878b;
+@define-color accent         #9cd57b;
+@define-color accent-soft    #a2e57b;
+@define-color shadow         #1c1e1f;
+@define-color warning        #e3d367;
+@define-color critical       #f76c7c;
+
+@define-color blue           #78cee9;
+@define-color purple         #baa0f8;
+@define-color orange         #f3a96a;

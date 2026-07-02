@@ -1,0 +1,70 @@
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+@import "shared/elements.rasi"
+@import "shared/inputbar.rasi"
+
+configuration {
+    kb-cancel: "Escape,Super_L";
+    show-icons: true;
+}
+
+window {
+    width: 780px;
+    height: 540px;
+    border: 1px solid;
+    border-color: @accent;
+    background-color: @background;
+    border-radius: 16px;
+    location: center;
+    anchor: center;
+}
+
+mainbox {
+    background-color: @background;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    margin: 15px 20px 10px 20px;
+    border: 1px solid;
+    border-color: @accent;
+}
+
+entry {
+    placeholder: "Wallpaper";
+}
+
+listview {
+    columns: 4;
+    lines: 3;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+    fixed-columns: true;
+    spacing: 10px;
+    margin: 0px 20px 20px 20px;
+    background-color: transparent;
+}
+
+element {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: @background-alt;
+}
+
+element selected.normal {
+    border: 2px solid;
+    border-color: @selected;
+    background-color: @background-alt;
+}
+
+element-icon {
+    size: 160px;
+    background-color: transparent;
+}
+
+element-text {
+    enabled: false;
+}
