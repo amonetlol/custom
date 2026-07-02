@@ -28,6 +28,8 @@
     "cpu",
     "custom/separator3",
     "network",
+    // "bluetooth",
+    // "backlight",
     "pulseaudio",
     "tray",
     "custom/separator4",
@@ -134,6 +136,24 @@
     "interval": 3,
     "on-click": "~/.config/custom/theme-prateado/rofi/hub.sh --applet"
   },
+
+  // "bluetooth": {
+  //   "format": "󰂯",
+  //   "format-off": "󰂲",
+  //   "format-disabled": "󰂲",
+  //   "format-connected": "󰂯",
+  //   "format-no-controller": "",
+  //   "tooltip-format": "Dispositivos: {num_connections}",
+  //   "on-click": "blueman-manager"
+  // },
+
+  // "backlight": {
+  //   "format": "{icon} {percent}%",
+  //   "format-icons": ["󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+  //   "tooltip-format": "Brilho: {percent}%",
+  //   "on-click": "brightnessctl set +5%",
+  //   "on-click-right": "brightnessctl set 5-%"
+  // },
 
   "pulseaudio": {
     "format": "{icon} {volume}%",

@@ -22,6 +22,7 @@
     "cpu",
     "network",
     // "bluetooth",
+    // "backlight",
     "pulseaudio",
     "tray",
     "custom/power"
@@ -121,6 +122,14 @@
   //   "format-no-controller": "",
   //   "tooltip-format": "Dispositivos: {num_connections}",
   //   "on-click": "blueman-manager"
+  // },
+
+  // "backlight": {
+  //   "format": "{icon} {percent}%",
+  //   "format-icons": ["󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+  //   "tooltip-format": "Brilho: {percent}%",
+  //   "on-click": "brightnessctl set +5%",
+  //   "on-click-right": "brightnessctl set 5-%"
   // },
 
   "pulseaudio": {

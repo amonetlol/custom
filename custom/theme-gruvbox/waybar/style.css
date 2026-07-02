@@ -96,6 +96,8 @@ window#waybar.empty #window {
 #clock,
 #cpu,
 #network,
+#bluetooth,
+#backlight,
 #pulseaudio,
 #tray,
 #idle_inhibitor {
@@ -109,6 +111,8 @@ window#waybar.empty #window {
 #clock:hover,
 #cpu:hover,
 #network:hover,
+#bluetooth:hover,
+#backlight:hover,
 #pulseaudio:hover,
 #tray:hover,
 #idle_inhibitor:hover,

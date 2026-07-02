@@ -118,6 +118,8 @@ window#waybar {
 #network.disconnected,
 #network.wifi,
 #network.ethernet,
+#bluetooth,
+#backlight,
 #pulseaudio {
     min-width: 14px;
     background: linear-gradient(45deg, @fg, alpha(@fg, 0.5));
