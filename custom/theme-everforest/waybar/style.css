@@ -86,6 +86,23 @@ window#waybar.empty #window {
  transition: .7s;
 }
 
+#custom-arch {
+ background-color: @foreground;
+ color: @background;
+ border: 1px solid @background;
+ min-width: 10px;
+ border-radius: 4px;
+ padding: 0 8px;
+ margin: 5px 2px;
+ font-size: 14px;
+}
+
+#custom-arch:hover {
+ background-color: alpha(@foreground, .9);
+ color: @background;
+ transition: .7s;
+}
+
 #custom-weather,
 #memory,
 #clock,

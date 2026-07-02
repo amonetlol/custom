@@ -6,6 +6,7 @@
   "height": 26,
 
   "modules-left": [
+    "custom/arch",
     "hyprland/workspaces",
     "idle_inhibitor",
     "hyprland/window"
@@ -24,6 +25,12 @@
     "pulseaudio",
     "custom/power"
   ],
+
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip-format": "Launcher",
+    "on-click": "~/.config/custom/theme-everforest/rofi/hub.sh --menu"
+  },
 
   "hyprland/workspaces": {
     "disable-scroll": true,
