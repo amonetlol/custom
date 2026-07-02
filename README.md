@@ -12,6 +12,10 @@ Temas **theme-prateado**, **theme-everforest** e **theme-gruvbox** para Waybar, 
 
 ![theme-everforest](previews/everforest.jpg)
 
+### theme-gruvbox
+
+![theme-gruvbox](previews/gruvbox.jpg)
+
 ## Estrutura
 
 ```
