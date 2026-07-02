@@ -1,0 +1,51 @@
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+@import "shared/elements.rasi"
+@import "shared/inputbar.rasi"
+
+configuration {
+    show-icons: false;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 640px;
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: @accent;
+    background-color: @background;
+}
+
+mainbox {
+    spacing: 10px;
+    margin: 20px;
+    background-color: transparent;
+    children: [ inputbar, listview ];
+}
+
+entry {
+    placeholder: "Search...";
+}
+
+listview {
+    lines: 12;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    fixed-height: true;
+    spacing: 6px;
+    background-color: transparent;
+}
+
+element {
+    padding: 10px 14px;
+    border-radius: 12px;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @background;
+}

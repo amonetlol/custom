@@ -1,0 +1,25 @@
+/* theme-glass — paleta glass */
+
+@define-color background     #FCFFFA;
+@define-color background-alt #F0F4EE;
+@define-color foreground     #151529;
+@define-color foreground-dim #9EAC94;
+@define-color accent         #337BCC;
+@define-color accent-soft    #7BC0CD;
+@define-color shadow         #151529;
+@define-color warning        #C3BDC6;
+@define-color critical       #EB7B9A;
+
+@define-color color0 #FCFFFA;
+@define-color color1 #C3BDC6;
+@define-color color2 #7BC0CD;
+@define-color color3 #EB7B9A;
+@define-color color4 #337BCC;
+@define-color color5 #8E65B2;
+@define-color color6 #2F2F5C;
+@define-color color7 #151529;
+@define-color color8 #9EAC94;
+
+@define-color glass-bg   rgba(255, 255, 255, 0.12);
+@define-color glass-bd   rgba(21, 21, 41, 0.10);
+@define-color glass-hov  rgba(255, 255, 255, 0.22);

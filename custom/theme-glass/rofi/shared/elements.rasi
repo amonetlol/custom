@@ -1,0 +1,4 @@
+element selected.normal {
+    background-color: @accent;
+    text-color: @background;
+}

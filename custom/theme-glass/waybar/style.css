@@ -1,0 +1,182 @@
+@import "colors.css";
+
+* {
+  font-family: "0xProto Nerd Font Propo";
+  font-size: 12px;
+  border: none;
+  box-shadow: none;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+#workspaces {
+  background-color: transparent;
+  margin: 8px 4px;
+}
+
+#workspaces button {
+  background-color: @glass-bg;
+  border-radius: 15px;
+  margin-right: 6px;
+  padding: 4px 12px;
+  color: @foreground;
+  border: 1px solid @glass-bd;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#workspaces button:hover {
+  background-color: @glass-hov;
+}
+
+#workspaces button.active {
+  padding: 4px 12px;
+  background: linear-gradient(45deg, @color1, @color2, @color5);
+  background-size: 300% 300%;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  animation: gradient 6s ease infinite;
+}
+
+#workspaces button label {
+  color: @foreground;
+  transition: color 0.3s ease;
+}
+
+#workspaces button.active label {
+  color: #FFFFFF;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes blink {
+  to {
+    background-color: @color3;
+    color: #FFFFFF;
+  }
+}
+
+#custom-arch,
+#custom-weather,
+#memory,
+#clock,
+#cpu,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#tray,
+#idle_inhibitor,
+#custom-power {
+  padding: 4px 12px;
+  border-radius: 15px;
+  background-color: @glass-bg;
+  color: @foreground;
+  border: 1px solid @glass-bd;
+  margin: 8px 3px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#custom-arch,
+#custom-power {
+  background: linear-gradient(45deg, @color4, @color2);
+  background-size: 300% 300%;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  animation: gradient 8s ease infinite;
+  font-size: 14px;
+}
+
+#custom-arch:hover,
+#custom-power:hover,
+#memory:hover,
+#clock:hover,
+#cpu:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-weather:hover {
+  background-color: @glass-hov;
+  transition: all 0.3s ease;
+}
+
+#custom-arch:hover,
+#custom-power:hover {
+  background-color: transparent;
+  background: linear-gradient(45deg, @color2, @color4, @color5);
+  background-size: 300% 300%;
+}
+
+#clock {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(255, 255, 255, 0.20) 50%,
+    rgba(255, 255, 255, 0.10) 100%);
+  background-size: 300% 300%;
+  animation: gradient 8s ease infinite;
+}
+
+#clock:hover {
+  background-color: @glass-hov;
+}
+
+#idle_inhibitor.activated {
+  color: @critical;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+#network.disconnected {
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 0.20) 0%,
+    rgba(255, 255, 255, 0.05) 100%);
+}
+
+#network.linked,
+#network.wifi,
+#network.ethernet {
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+}
+
+#pulseaudio.muted {
+  background-color: alpha(@color3, 0.35);
+  animation: none;
+}
+
+#memory.warning,
+#cpu.warning {
+  color: @color6;
+}
+
+#memory.critical,
+#cpu.critical {
+  color: @critical;
+  animation: blink 0.8s ease-in-out infinite alternate;
+}
+
+tooltip {
+  border-radius: 15px;
+  background: @background;
+  border: 1px solid @glass-bd;
+}
+
+tooltip label {
+  color: @foreground;
+}

@@ -1,0 +1,25 @@
+/* inputbar limpo — sem pill branco (igual window/wallpaper) */
+
+inputbar {
+    padding: 8px 10px;
+    border-radius: 14px;
+    background-color: @background-alt;
+    text-color: @foreground;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    margin: 0 10px 0 0;
+    padding: 0;
+    background-color: transparent;
+    text-color: @accent;
+}
+
+textbox-prompt-colon { enabled: false; }
+
+entry {
+    padding: 0;
+    background-color: transparent;
+    text-color: @foreground;
+    placeholder-color: @muted;
+}

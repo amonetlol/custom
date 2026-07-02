@@ -1,6 +1,6 @@
 # custom — Hyprland theme & tooling
 
-Temas **theme-prateado**, **theme-everforest** e **theme-gruvbox** para Waybar, Rofi, Foot e Hyprland.
+Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox** e **theme-glass** para Waybar, Rofi, Foot e Hyprland.
 
 ## Preview
 
@@ -23,6 +23,7 @@ custom/
 ├── theme-prateado/
 ├── theme-everforest/
 ├── theme-gruvbox/
+├── theme-glass/
 │   ├── theme.conf
 │   ├── waybar/
 │   ├── rofi/
