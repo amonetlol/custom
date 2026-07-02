@@ -1,0 +1,148 @@
+@import "colors.css";
+
+* {
+  font-family: "0xProto Nerd Font Propo";
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  padding: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: @background;
+  border-radius: 5px;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+window#waybar.empty #window {
+  background: transparent;
+  color: transparent;
+}
+
+#workspaces {
+  padding: 0 5px;
+  margin: 0;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 4px;
+  margin: 0 0 0 6px;
+  opacity: 1;
+  color: @foreground;
+  font-size: 13px;
+}
+
+#workspaces button.active {
+  color: @accent;
+  opacity: 1;
+  padding: 0 4px;
+  font-size: 15px;
+}
+
+#workspaces button.empty {
+  opacity: 0.3;
+  font-size: 13px;
+}
+
+#workspaces button.empty.active {
+  font-size: 15px;
+  color: @accent;
+  opacity: 1;
+}
+
+#workspaces button:hover {
+  color: @accent-soft;
+}
+
+#custom-arch {
+  font-size: 13px;
+  color: @accent;
+  margin: 0 5px;
+}
+
+#custom-power {
+  font-size: 13px;
+  color: @accent;
+  margin: 0 5px;
+}
+
+#clock {
+  color: @accent;
+  font-size: 12px;
+}
+
+#custom-weather,
+#memory,
+#cpu,
+#network,
+#bluetooth,
+#backlight,
+#pulseaudio,
+#tray,
+#idle_inhibitor {
+  font-size: 12px;
+  min-width: 12px;
+  margin: 0 5px;
+  padding: 0 2px;
+  color: @foreground;
+}
+
+#idle_inhibitor.activated {
+  color: @accent;
+}
+
+#idle_inhibitor.deactivated {
+  color: @foreground-dim;
+}
+
+#memory.warning,
+#cpu.warning,
+#network.disconnected {
+  color: @warning;
+}
+
+#memory.critical,
+#cpu.critical {
+  color: @critical;
+}
+
+#custom-arch:hover,
+#custom-power:hover,
+#memory:hover,
+#clock:hover,
+#cpu:hover,
+#network:hover,
+#bluetooth:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#tray:hover,
+#idle_inhibitor:hover,
+#custom-weather:hover {
+  color: @accent;
+  transition: 0.2s ease-in-out;
+}
+
+tooltip {
+  padding: 6px 8px;
+  background: @background-alt;
+  font-size: 11px;
+  border: 1px solid alpha(@foreground, 0.25);
+  border-radius: 8px;
+}
+
+tooltip label {
+  color: @foreground;
+  font-weight: normal;
+}

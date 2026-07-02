@@ -1,0 +1,14 @@
+/* theme-edge — paleta Edge Dark Aura Dim */
+
+@define-color background     #2b2d37;
+@define-color background-alt #333644;
+@define-color foreground     #97a4b5;
+@define-color foreground-dim #677287;
+@define-color accent         #6cb6eb;
+@define-color accent-soft    #5dbbc1;
+@define-color shadow         #202023;
+@define-color warning        #deb974;
+@define-color critical       #ec7279;
+
+@define-color green          #a0c980;
+@define-color purple          #d38aea;
