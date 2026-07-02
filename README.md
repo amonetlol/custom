@@ -1,26 +1,36 @@
 # custom — Hyprland theme & tooling
 
-Paleta monocromática **theme-prateado** para Waybar, Rofi, Foot e Hyprland.
+Temas **theme-prateado** e **theme-everforest** para Waybar, Rofi, Foot e Hyprland.
 
 ## Preview
 
+### theme-prateado
+
 ![theme-prateado](previews/prateado.jpg)
+
+### theme-everforest
+
+![theme-everforest](previews/everforest.jpg)
 
 ## Estrutura
 
 ```
 custom/
 ├── theme-prateado/
-│   ├── theme.conf          # cores/decoração Hyprland
-│   ├── waybar/             # barra superior (config, style, colors)
-│   ├── rofi/               # menus (launcher, hub, wallpaper, etc.)
-│   └── foot/               # terminal
+├── theme-everforest/
+│   ├── theme.conf
+│   ├── waybar/
+│   ├── rofi/
+│   └── foot/
 └── scripts/
-    └── shot.sh             # screenshots
+    ├── shot.sh
+    └── rofi-theme.sh
 
-binds.conf                  # atalhos → hub/rofi
-current_theme.conf          # source do tema ativo
-install.sh                  # copia tudo para ~/.config/custom
+binds.conf
+current                  # tema ativo ($THEME)
+current_theme.conf
+waybar-current.sh        # exec-once → waybar do tema em current
+install.sh
 ```
 
 ## Instalação
@@ -36,7 +46,10 @@ No `hyprland.conf`:
 ```conf
 source = ~/.config/custom/current_theme.conf
 source = ~/.config/custom/binds.conf
+exec-once = ~/.config/custom/waybar-current.sh
 ```
+
+Trocar tema: **Super+T** (`rofi-theme.sh`) ou editar `~/.config/custom/current`.
 
 ## Hub (`rofi/hub.sh`)
 
@@ -65,8 +78,9 @@ Menu Rofi com nomes legíveis para as ações do hub.
 | Super+F11 | Hub GUI |
 | Super+F12 | Reiniciar waybar |
 | Super+F10 | Wallpaper |
-| Alt+V | Clipboard |
-| Alt+X | Power menu |
+| Super+T | Seletor de tema |
+| Super+V | Clipboard |
+| Super+X | Power menu |
 | Super+Shift+D | Window switcher |
 | Super+Shift+R | `hyprctl reload` |
 | Super+Return | Foot |

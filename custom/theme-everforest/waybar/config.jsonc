@@ -8,8 +8,8 @@
   "modules-left": [
     "custom/arch",
     "hyprland/workspaces",
-    "idle_inhibitor",
-    "hyprland/window"
+    "idle_inhibitor"
+    // "hyprland/window"
   ],
 
   "modules-center": [
@@ -23,6 +23,7 @@
     "network",
     // "bluetooth",
     "pulseaudio",
+    "tray",
     "custom/power"
   ],
 
@@ -42,9 +43,14 @@
     }
   },
 
-  "hyprland/window": {
-    "format": "{}",
-    "max-length": 45
+  // "hyprland/window": {
+  //   "format": "{}",
+  //   "max-length": 45
+  // },
+
+  "tray": {
+    "icon-size": 13,
+    "spacing": 2
   },
 
   "idle_inhibitor": {

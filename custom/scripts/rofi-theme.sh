@@ -84,7 +84,7 @@ apply_theme() {
   link_shared "$selected"
   link_foot "$selected"
   hyprctl reload
-  "$CUSTOM_DIR/$selected/rofi/hub.sh" --waybar
+  "$CUSTOM_DIR/waybar-current.sh"
   reload_foot
   notify-send -u low "Tema" "Ativo: $(theme_label "$selected")" 2>/dev/null || true
 }

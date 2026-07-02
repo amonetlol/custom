@@ -110,6 +110,7 @@ window#waybar.empty #window {
 #network,
 #bluetooth,
 #pulseaudio,
+#tray,
 #idle_inhibitor,
 #custom-power,
 #window {
@@ -127,6 +128,7 @@ window#waybar.empty #window {
 #network:hover,
 #bluetooth:hover,
 #pulseaudio:hover,
+#tray:hover,
 #idle_inhibitor:hover,
 #custom-power:hover,
 #window:hover {

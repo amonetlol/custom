@@ -53,9 +53,7 @@ case "$1" in
     exec foot -c "$FOOT_INI"
     ;;
   --waybar)
-    pkill waybar 2>/dev/null || true
-    sleep 0.2
-    exec waybar -c "$WAYBAR_DIR/config.jsonc" -s "$WAYBAR_DIR/style.css"
+    exec "${HOME}/.config/custom/waybar-current.sh"
     ;;
   --idle-on)
     if [[ -f "$IDLE_PID_FILE" ]] && kill -0 "$(cat "$IDLE_PID_FILE")" 2>/dev/null; then
