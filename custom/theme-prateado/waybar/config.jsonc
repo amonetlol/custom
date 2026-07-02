@@ -1,0 +1,156 @@
+{
+  "exclusive": true,
+  "reload_style_on_change": true,
+  "position": "top",
+  "mod": "dock",
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces",
+    "custom/separator2",
+    "idle_inhibitor"
+  ],
+
+  "modules-center": [
+    "clock",
+    "custom/separator",
+    "custom/weather"
+  ],
+
+  "modules-right": [
+    "cpu",
+    "memory",
+    "custom/separator3",
+    "network",
+    "pulseaudio",
+    "tray",
+    "custom/separator4",
+    "custom/power"
+  ],
+
+  "tray": {
+    "icon-size": 13,
+    "spacing": 2
+  },
+
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip-format": "Launcher",
+    "on-click": "~/.config/custom/theme-prateado/rofi/hub.sh --menu"
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "cursor": true,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": 1
+    }
+  },
+
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/separator2": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/separator3": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/separator4": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "tooltip-format-activated": "Stay Awake: ON",
+    "tooltip-format-deactivated": "Stay Awake: OFF",
+    "format-icons": {
+      "activated": "󱎴",
+      "deactivated": "󰷛"
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y — %H:%M}",
+    "interval": 30
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 300,
+    "exec": "wttrbar --nerd --lang pt --location Ubatuba+SP",
+    "return-type": "json",
+    "on-click": "xdg-open https://wttr.in/Ubatuba+SP"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󰻠 {usage:02}%",
+    "on-click": "foot -e btop",
+    "states": {
+      "warning": 50,
+      "critical": 80
+    }
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {used:02.1f}GB",
+    "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB ({percentage}%)",
+    "on-click": "foot -e btop",
+    "states": {
+      "warning": 50,
+      "critical": 80
+    }
+  },
+
+  "network": {
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "format": "{icon}",
+    "format-wifi": "{icon}",
+    "format-ethernet": "󰌗",
+    "format-disconnected": "󰤮",
+    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+    "tooltip-format-disconnected": "Desconectado",
+    "interval": 3,
+    "on-click": "~/.config/custom/theme-prateado/rofi/hub.sh --applet"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "scroll-step": 5,
+    "on-click": "pavucontrol",
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip-format": "Volume: {volume}%"
+  },
+
+  "custom/power": {
+    "format": "󰐥",
+    "tooltip-format": "Power menu",
+    "on-click": "~/.config/custom/theme-prateado/rofi/hub.sh --power"
+  }
+}

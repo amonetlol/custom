@@ -1,0 +1,11 @@
+/* theme-prateado — paleta única (waybar / rofi / foot / hyprland) */
+
+@define-color background     #1e1e1e;
+@define-color background-alt #282828;
+@define-color foreground     #b0b0a8;
+@define-color foreground-dim #8a8a82;
+@define-color accent         #cacccc;
+@define-color accent-soft    #989890;
+@define-color shadow         #121318;
+@define-color warning        #c95d0f;
+@define-color critical       #f53c3c;

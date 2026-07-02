@@ -1,0 +1,206 @@
+@import "colors.css";
+
+@define-color bg @background;
+@define-color fg @foreground;
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-family: "0xProto Nerd Font Propo";
+    font-size: 12px;
+    font-weight: 900;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#waybar > box {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: @bg;
+    border-radius: 15px;
+    padding: 0px 2px;
+    margin: 5px 5px 2px 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+    border: 0.5px solid alpha(@fg, 0.2);
+}
+
+#workspaces {
+    background-color: transparent;
+    border: none;
+    padding: 1px 1px;
+    margin: 2px 0px;
+    margin-right: 6px;
+    border-radius: 50px;
+}
+
+#workspaces button {
+    padding: 0px 8px;
+    margin: 0px 2px;
+    min-width: 18px;
+    color: @bg;
+    border-radius: 100px;
+    background: linear-gradient(45deg, @fg, alpha(@fg, 0.5));
+    transition:
+        background 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        color      0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+        padding    0.2s  cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#workspaces button.active {
+    padding: 0px 18px;
+    margin: 0px 2px;
+    background: linear-gradient(45deg, @fg, alpha(@fg, 0.5));
+    color: @bg;
+    border-radius: 100px;
+}
+
+#workspaces button.empty {
+    color: alpha(@fg, 0.85);
+    background: alpha(@fg, 0.2);
+}
+
+#workspaces button.empty.active {
+    padding: 0px 18px;
+    margin: 0px 2px;
+    background: linear-gradient(45deg, alpha(@fg, 0.5), @bg);
+    color: @bg;
+    border-radius: 100px;
+    background-clip: padding-box;
+}
+
+#workspaces button:hover {
+    background: linear-gradient(45deg, alpha(@fg, 1), alpha(@fg, 0.5));
+    color: @bg;
+    border-radius: 100px;
+    box-shadow: none;
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#workspaces button.empty:hover {
+    background: alpha(@fg, 0.5);
+    border-radius: 100px;
+    color: @bg;
+}
+
+#tray,
+#idle_inhibitor,
+#clock,
+#custom-arch,
+#custom-power,
+#custom-weather,
+#custom-separator,
+#custom-separator2,
+#custom-separator3,
+#custom-separator4 {
+    min-width: 14px;
+    color: @fg;
+    padding: 0px 4px;
+    margin: 3px 2px;
+    border-radius: 15px;
+    transition: all 0.25s ease;
+}
+
+#cpu,
+#memory,
+#network,
+#network.disconnected,
+#network.wifi,
+#network.ethernet,
+#pulseaudio {
+    min-width: 14px;
+    background: linear-gradient(45deg, @fg, alpha(@fg, 0.5));
+    color: @bg;
+    padding: 0px 8px;
+    margin: 3px 2px;
+    border-radius: 15px;
+    transition: all 0.25s ease;
+}
+
+#tray {
+    padding-top: 1px;
+}
+
+#custom-arch {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 2px;
+    margin-right: 4px;
+}
+
+#idle_inhibitor {
+    padding-right: 10px;
+}
+
+#idle_inhibitor.activated,
+#idle_inhibitor.deactivated {
+    padding-left: 0px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+#clock {
+    padding-left: 10px;
+    padding-right: 4px;
+}
+
+#custom-weather {
+    padding-left: 4px;
+    padding-right: 10px;
+}
+
+#memory {
+    padding-left: 10px;
+}
+
+#custom-power {
+    padding-right: 10px;
+    margin-right: 4px;
+}
+
+#idle_inhibitor.activated {
+    color: @accent;
+}
+
+tooltip {
+    background: alpha(@bg, 0.95);
+    border: 1px solid alpha(@fg, 0.2);
+    border-radius: 8px;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 4px;
+}
+
+#custom-separator,
+#custom-separator2,
+#custom-separator3,
+#custom-separator4 {
+    color: alpha(@fg, 0.3);
+    opacity: 1;
+    font-size: 10px;
+    padding: 0 3px;
+}
+
+#memory.warning,
+#cpu.warning {
+    color: @warning;
+}
+
+#memory.critical,
+#cpu.critical {
+    color: @critical;
+}
