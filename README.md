@@ -20,6 +20,10 @@ Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox**, **theme-glass
 
 ![theme-glass](previews/glass.jpg)
 
+### theme-orange
+
+![theme-orange](previews/orange.jpg)
+
 ## Estrutura
 
 ```
