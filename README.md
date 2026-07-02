@@ -28,6 +28,10 @@ Temas **theme-prateado**, **theme-everforest**, **theme-gruvbox**, **theme-glass
 
 ![theme-sonokai](previews/sonokai.jpg)
 
+### theme-edge
+
+![theme-edge](previews/edge.jpg)
+
 ## Estrutura
 
 ```
@@ -38,6 +42,7 @@ custom/
 ├── theme-glass/
 ├── theme-orange/
 ├── theme-sonokai/
+├── theme-edge/
 │   ├── theme.conf
 │   ├── waybar/
 │   ├── rofi/
