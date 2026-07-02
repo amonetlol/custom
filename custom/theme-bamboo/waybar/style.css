@@ -18,11 +18,17 @@ window#waybar {
 }
 
 .modules-left {
-  margin-left: 4px;
+  margin-left: 10px;
+  padding: 5px 0;
+}
+
+.modules-center {
+  padding: 5px 0;
 }
 
 .modules-right {
-  margin-right: 8px;
+  margin-right: 10px;
+  padding: 5px 0;
 }
 
 window#waybar.empty #window {
@@ -32,14 +38,15 @@ window#waybar.empty #window {
 
 #workspaces {
   border-radius: 2px;
-  margin: 6px 0 2px 0;
+  margin: 2px 0;
+  padding: 0 2px;
   opacity: 0.95;
 }
 
 #workspaces button {
   font-size: 10px;
-  padding: 0 5px;
-  margin: 3px 1px;
+  padding: 3px 7px;
+  margin: 2px 2px;
   border-radius: 2px;
   background-color: alpha(@foreground, 0.8);
   color: @background;
@@ -49,8 +56,8 @@ window#waybar.empty #window {
 
 #workspaces button.active {
   font-size: 10px;
-  padding: 0 5px;
-  margin: 3px 1px;
+  padding: 3px 7px;
+  margin: 2px 2px;
   border-radius: 2px;
   color: @background;
   background-color: alpha(@foreground, 0.9);
@@ -65,8 +72,8 @@ window#waybar.empty #window {
 
 #workspaces button.empty.active {
   font-size: 10px;
-  padding: 0 5px;
-  margin: 3px 1px;
+  padding: 3px 7px;
+  margin: 2px 2px;
   border-radius: 2px;
   color: @background;
   background-color: alpha(@foreground, 0.9);
@@ -83,19 +90,22 @@ window#waybar.empty #window {
 #custom-arch {
   font-size: 13px;
   color: @accent;
-  margin: 3px 5px 0;
+  margin: 0 8px 0 4px;
+  padding: 0 2px;
 }
 
 #custom-power {
   font-size: 13px;
   color: @accent;
-  margin: 3px 5px 0;
+  margin: 0 4px 0 8px;
+  padding: 0 2px;
 }
 
 #clock {
   color: @accent;
   font-size: 12px;
-  margin: 3px 5px 0;
+  margin: 0 8px;
+  padding: 0 4px;
 }
 
 #custom-weather,
@@ -109,7 +119,7 @@ window#waybar.empty #window {
 #idle_inhibitor {
   font-size: 12px;
   min-width: 10px;
-  margin: 3px 0 0;
+  margin: 0 6px;
   padding: 0 4px;
   color: @foreground;
 }
