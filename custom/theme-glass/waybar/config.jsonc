@@ -56,7 +56,7 @@
 
   "clock": {
     "format": "{:%H:%M}",
-    "tooltip-format": "{:%A, %d de %B de %Y — %H:%M}",
+    "tooltip-format": "{:L%A, %d de %B de %Y - %H:%M}",
     "locale": "pt_BR.UTF-8",
     "interval": 30
   },
