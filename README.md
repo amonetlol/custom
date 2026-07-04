@@ -60,7 +60,10 @@ hypr/
 ├── hyprland.conf
 ├── binds.conf
 ├── current_theme.conf
-└── windows-rule.conf
+├── windows-rule.conf
+├── hypridle.conf
+├── hyprsunset.conf
+└── hyprlock.conf
 
 current                  # tema ativo ($THEME)
 waybar-current.sh        # exec-once → waybar do tema em current

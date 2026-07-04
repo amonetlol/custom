@@ -21,9 +21,9 @@ echo "→ Instalando em $DEST"
 mkdir -p "$DEST"
 cp -a "$SRC/." "$DEST/"
 
-# Restaura auxiliares do backup (hypridle, scripts, etc.)
+# Restaura auxiliares do backup (scripts, etc.)
 if [[ -d "$BACKUP" ]]; then
-  for item in hypridle.conf hyprlock.conf hyprsunset.conf scripts .format; do
+  for item in scripts .format; do
     if [[ ! -e "$DEST/$item" && -e "$BACKUP/$item" ]]; then
       cp -a "$BACKUP/$item" "$DEST/$item"
       echo "  ↳ restaurado: $item"
@@ -40,6 +40,9 @@ Arquivos gerenciados:
   ~/.config/hypr/binds.conf
   ~/.config/hypr/current_theme.conf
   ~/.config/hypr/windows-rule.conf
+  ~/.config/hypr/hypridle.conf
+  ~/.config/hypr/hyprsunset.conf
+  ~/.config/hypr/hyprlock.conf
 
 Reinicie o Hyprland ou execute: hyprctl reload
 
