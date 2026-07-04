@@ -16,7 +16,10 @@ fi
 THEME_DIR="$(custom_theme_dir || true)"
 
 options=$(printf " Hyprland\n Scripts\n Waybar\n Rofi\n Foot\n Mako\n Wallpapers\n Neovim" \
-  | rofi -i -dmenu -p " Configuration" -theme "$ROFI_THEME")
+  | rofi -i -dmenu -p " Configuration" -theme "$ROFI_THEME") || {
+  notify-send -u critical "Configuration" "Falha ao abrir o menu (rofi)." 2>/dev/null || true
+  exit 1
+}
 
 [[ -z "$options" ]] && exit 0
 
