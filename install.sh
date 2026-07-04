@@ -7,8 +7,9 @@ DEST="${XDG_CONFIG_HOME:-$HOME/.config}/custom"
 echo "→ Instalando em $DEST"
 mkdir -p "$DEST"
 
-# Symlinks gerenciados pelo tema — remover antes do cp
-rm -f "$DEST/foot" "$DEST/mako" "$DEST/scripts/rofi-theme-shared"
+# Symlinks/pastas gerenciados pelo tema — remover antes do cp
+rm -rf "$DEST/foot" "$DEST/mako"
+rm -f "$DEST/scripts/rofi-theme-shared"
 
 cp -a "$ROOT/custom/." "$DEST/"
 cp "$ROOT/current" "$ROOT/waybar-current.sh" "$DEST/"
