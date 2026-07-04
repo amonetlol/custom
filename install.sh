@@ -7,8 +7,8 @@ DEST="${XDG_CONFIG_HOME:-$HOME/.config}/custom"
 echo "→ Instalando em $DEST"
 mkdir -p "$DEST"
 
-# Symlinks/pastas gerenciados pelo tema — remover antes do cp
-rm -rf "$DEST/foot" "$DEST/mako"
+# Symlink gerenciado pelo tema — remover antes do cp
+rm -rf "$DEST/foot"
 rm -f "$DEST/scripts/rofi-theme-shared"
 
 cp -a "$ROOT/custom/." "$DEST/"
@@ -20,8 +20,6 @@ CURRENT_THEME="$(grep -E '^\$THEME\s*=' "$DEST/current" | head -1 | sed -E 's/^\
 if [[ -n "$CURRENT_THEME" && -d "$DEST/$CURRENT_THEME" ]]; then
   ln -sfn "$DEST/$CURRENT_THEME/rofi/shared" "$DEST/scripts/rofi-theme-shared"
   ln -sfn "$DEST/$CURRENT_THEME/foot" "$DEST/foot"
-  rm -f "$DEST/mako"
-  ln -sfn "$DEST/$CURRENT_THEME/mako" "$DEST/mako"
 fi
 
 cat <<EOF
