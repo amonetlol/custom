@@ -90,6 +90,26 @@ source = ~/.config/hypr/binds.conf
 
 Trocar tema: **Super+T** (`rofi-theme.sh`) ou editar `~/.config/custom/current`.
 
+### VM / atualização
+
+A pasta em `~/Downloads/Custom` na VM é sincronizada via **rsync** (não é um clone git). Para atualizar:
+
+```bash
+# Na máquina de desenvolvimento (envia arquivos)
+rsync -avz --exclude .git ./ pio@VM:~/Downloads/Custom/
+
+# Na VM
+cd ~/Downloads/Custom && ./install.sh
+```
+
+Para usar `git pull` na VM, clone o repositório uma vez:
+
+```bash
+mv ~/Downloads/Custom ~/Downloads/Custom.bkp
+git clone git@github.com:amonetlol/custom.git ~/Downloads/Custom
+cd ~/Downloads/Custom && ./install.sh && ./install_hypr.sh
+```
+
 ## Hub (`rofi/hub.sh`)
 
 Dispatcher central dos menus:

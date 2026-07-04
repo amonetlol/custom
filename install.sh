@@ -15,6 +15,7 @@ CURRENT_THEME="$(grep -E '^\$THEME\s*=' "$DEST/current" | head -1 | sed -E 's/^\
 if [[ -n "$CURRENT_THEME" && -d "$DEST/$CURRENT_THEME" ]]; then
   ln -sfn "$DEST/$CURRENT_THEME/rofi/shared" "$DEST/scripts/rofi-theme-shared"
   ln -sfn "$DEST/$CURRENT_THEME/foot" "$DEST/foot"
+  rm -rf "$DEST/mako"
   ln -sfn "$DEST/$CURRENT_THEME/mako" "$DEST/mako"
 fi
 
