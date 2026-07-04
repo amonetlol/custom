@@ -10,7 +10,7 @@ warn() { printf "[AVISO] %s\n" "$1"; }
 prompt="$(hostname) (Hyprland)"
 mesg="Uptime: $(uptime -p | sed 's/up //g')"
 
-options=$'Lock\nLogout\nSuspend\nHibernate\nReboot\nShutdown'
+options=$'Lock\nLogout\nSuspend\nReboot\nShutdown'
 
 ensure_hypr_env() {
   export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
@@ -54,7 +54,6 @@ run_cmd() {
     lock)      locky ;;
     logout)    do_logout ;;
     suspend)   systemctl suspend ;;
-    hibernate) systemctl hibernate ;;
     reboot)    systemctl reboot ;;
     shutdown)  systemctl poweroff ;;
     *)         return 1 ;;
@@ -69,7 +68,6 @@ case "$chosen" in
   Lock)      run_cmd lock ;;
   Logout)    run_cmd logout ;;
   Suspend)   run_cmd suspend ;;
-  Hibernate) run_cmd hibernate ;;
   Reboot)    run_cmd reboot ;;
   Shutdown)  run_cmd shutdown ;;
   *)
@@ -77,7 +75,6 @@ case "$chosen" in
       *Lock*)              run_cmd lock ;;
       *Logout*|*Sair*)     run_cmd logout ;;
       *Suspend*)           run_cmd suspend ;;
-      *Hibernate*)         run_cmd hibernate ;;
       *Reboot*|*Reiniciar*) run_cmd reboot ;;
       *Shutdown*|*Desligar*) run_cmd shutdown ;;
     esac

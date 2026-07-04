@@ -4,7 +4,7 @@ set -euo pipefail
 THEME_DIR="${HOME}/.config/custom/theme-prateado"
 ROFI_DIR="$THEME_DIR/rofi"
 WAYBAR_DIR="$THEME_DIR/waybar"
-FOOT_INI="${HOME}/.config/custom/foot/foot.ini"
+FOOT_INI="$THEME_DIR/foot/foot.ini"
 IDLE_PID_FILE="${XDG_RUNTIME_DIR:-/tmp}/theme-prateado-idle-inhibit.pid"
 
 usage() {
