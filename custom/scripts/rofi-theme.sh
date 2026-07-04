@@ -66,12 +66,7 @@ reload_foot() {
 }
 
 reload_mako() {
-  local theme="${1:-$(get_active_theme)}"
-  local cfg="$CUSTOM_DIR/$theme/mako/config"
-
-  pkill -x mako 2>/dev/null || true
-  sleep 0.1
-  [[ -f "$cfg" ]] && mako -c "$cfg" &
+  "$CUSTOM_DIR/scripts/mako-current.sh" "${1:-}"
 }
 
 apply_theme() {
@@ -92,10 +87,11 @@ apply_theme() {
 
   link_shared "$selected"
   link_foot "$selected"
-  hyprctl reload
-  "$CUSTOM_DIR/waybar-current.sh"
+  reload_mako "$selected" || true
+  hyprctl reload 2>/dev/null || true
+  "$CUSTOM_DIR/waybar-current.sh" || true
   reload_foot
-  reload_mako "$selected"
+  sleep 0.25
   notify-send -u low "Tema" "Ativo: $(theme_label "$selected")" 2>/dev/null || true
 }
 
