@@ -66,7 +66,7 @@ link_mako() {
     notify-send -u critical "Tema" "Pasta não encontrada: $mako_dir" 2>/dev/null || true
     exit 1
   }
-  rm -rf "$MAKO_LINK"
+  rm -f "$MAKO_LINK"
   ln -sfn "$mako_dir" "$MAKO_LINK"
 }
 
