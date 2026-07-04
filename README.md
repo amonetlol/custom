@@ -56,11 +56,16 @@ custom/
     ├── shot.sh
     └── rofi-theme.sh
 
-binds.conf
+hypr/
+├── hyprland.conf
+├── binds.conf
+├── current_theme.conf
+└── windows-rule.conf
+
 current                  # tema ativo ($THEME)
-current_theme.conf
 waybar-current.sh        # exec-once → waybar do tema em current
-install.sh
+install.sh               # instala ~/.config/custom
+install_hypr.sh          # instala ~/.config/hypr
 ```
 
 ## Instalação
@@ -69,14 +74,15 @@ install.sh
 git clone git@github.com:amonetlol/custom.git
 cd custom
 ./install.sh
+./install_hypr.sh
 ```
 
-No `hyprland.conf`:
+O `hyprland.conf` já inclui:
 
 ```conf
-source = ~/.config/custom/current_theme.conf
-source = ~/.config/custom/binds.conf
-exec-once = ~/.config/custom/waybar-current.sh
+source = ~/.config/hypr/current_theme.conf
+source = ~/.config/hypr/windows-rule.conf
+source = ~/.config/hypr/binds.conf
 ```
 
 Trocar tema: **Super+T** (`rofi-theme.sh`) ou editar `~/.config/custom/current`.
@@ -100,11 +106,12 @@ Dispatcher central dos menus:
 
 Menu Rofi com nomes legíveis para as ações do hub.
 
-## Atalhos (`binds.conf`)
+## Atalhos (`hypr/binds.conf`)
 
 | Atalho | Ação |
 |--------|------|
 | Super+D | Launcher |
+| Super+F2 | Hub GUI |
 | Super+F11 | Hub GUI |
 | Super+F12 | Reiniciar waybar |
 | Super+F10 | Wallpaper |
@@ -118,8 +125,12 @@ Menu Rofi com nomes legíveis para as ações do hub.
 | Super+E | Thunar |
 | Super+W | Firefox |
 | Super+F | Fullscreen |
+| Super+Q | Fechar janela |
+| Super+P | Screenshot área |
 | Print | Screenshot tela |
 | Super+Print | Screenshot área |
+| Super+1–0 | Workspaces |
+| Super+Shift+1–0 | Mover janela para workspace |
 
 ## Dependências
 
