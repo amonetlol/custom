@@ -119,6 +119,7 @@ Menu Rofi com nomes legíveis para as ações do hub.
 | Super+F12 | Reiniciar waybar |
 | Super+F10 | Wallpaper |
 | Super+T | Seletor de tema |
+| Super+Shift+C | Configuration (editar configs) |
 | Alt+V | Clipboard |
 | Super+X | Power menu |
 | Super+Shift+D | Window switcher |

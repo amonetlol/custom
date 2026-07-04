@@ -7,6 +7,7 @@ CURRENT_FILE="$CUSTOM_DIR/current"
 THEME_RASI="$SCRIPTS_DIR/rofi-theme.rasi"
 SHARED_LINK="$SCRIPTS_DIR/rofi-theme-shared"
 FOOT_LINK="$CUSTOM_DIR/foot"
+MAKO_LINK="$CUSTOM_DIR/mako"
 
 list_themes() {
   grep -E '^\s*#?\s*\$THEME\s*=' "$CURRENT_FILE" \
@@ -58,11 +59,29 @@ link_foot() {
   ln -sfn "$foot_dir" "$FOOT_LINK"
 }
 
+link_mako() {
+  local theme="$1"
+  local mako_dir="$CUSTOM_DIR/$theme/mako"
+  [[ -d "$mako_dir" ]] || {
+    notify-send -u critical "Tema" "Pasta não encontrada: $mako_dir" 2>/dev/null || true
+    exit 1
+  }
+  ln -sfn "$mako_dir" "$MAKO_LINK"
+}
+
 reload_foot() {
   if command -v footclient >/dev/null 2>&1; then
     footclient reload 2>/dev/null || true
   fi
   pkill -USR1 -x foot 2>/dev/null || true
+}
+
+reload_mako() {
+  pkill -x mako 2>/dev/null || true
+  sleep 0.1
+  if [[ -f "$MAKO_LINK/config" ]]; then
+    mako -c "$MAKO_LINK/config" &
+  fi
 }
 
 apply_theme() {
@@ -83,9 +102,11 @@ apply_theme() {
 
   link_shared "$selected"
   link_foot "$selected"
+  link_mako "$selected"
   hyprctl reload
   "$CUSTOM_DIR/waybar-current.sh"
   reload_foot
+  reload_mako
   notify-send -u low "Tema" "Ativo: $(theme_label "$selected")" 2>/dev/null || true
 }
 
@@ -97,6 +118,7 @@ apply_theme() {
 active="$(get_active_theme)"
 link_shared "$active"
 link_foot "$active"
+link_mako "$active"
 
 menu=""
 while IFS= read -r theme; do
